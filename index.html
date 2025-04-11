@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benvenuto</title>
+  <title>Rifletti</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="intro">
-    <h1 class="fade-in">benvenuto</h1>
+    <h1 class="scroll-text">rifletti</h1>
   </div>
 
-  <div id="main-content" class="hidden">
-    <h2>Contenuto principale</h2>
-    <p>Qui puoi mettere qualsiasi altra informazione o pagina web.</p>
+  <div id="question" class="hidden">
+    <p>Sei su Instagram da 4 minuti. Vuoi continuare?</p>
+    <div class="buttons">
+      <button onclick="goToInstagram()">Continua su Instagram</button>
+      <button onclick="chiudi()">Chiudi il browser</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
