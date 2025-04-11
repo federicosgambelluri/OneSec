@@ -4,42 +4,76 @@ body {
   background-color: black;
   color: white;
   font-family: 'Helvetica Neue', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 #intro {
-  animation: fadeOut 1s ease-in-out forwards;
-  animation-delay: 3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s ease-in-out forwards;
-  animation-delay: 0.5s;
+.scroll-text {
   font-size: 3rem;
-  text-transform: lowercase;
+  animation: scrollUp 3s ease-in-out forwards;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+}
+
+#question {
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 2s ease-in forwards;
 }
 
 .hidden {
   display: none;
 }
 
-#main-content {
-  text-align: center;
-}
-
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
   }
 }
 
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-  }
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ccc;
 }
